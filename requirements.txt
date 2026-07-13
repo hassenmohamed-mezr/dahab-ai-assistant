@@ -5,6 +5,7 @@ SQLAlchemy==2.0.51
 alembic
 
 pydantic==2.13.4
+pydantic-settings==2.0.0
 python-dotenv==1.2.1
 python-multipart==0.0.28
 python-dateutil==2.9.0.post0
