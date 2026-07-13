@@ -1,31 +1,25 @@
 from fastapi import FastAPI
 
+from config import settings
+
 app = FastAPI(
-    title="Dahab AI Assistant",
+    title=settings.APP_NAME,
     description="AI-powered WhatsApp assistant for apartment guests.",
-    version="1.0.0",
+    version=settings.APP_VERSION,
 )
 
 
 @app.get("/", tags=["System"])
 async def root():
-    """
-    Root endpoint.
-    Used to verify that the application is running.
-    """
     return {
-        "project": "Dahab AI Assistant",
+        "project": settings.APP_NAME,
         "status": "running",
-        "version": app.version,
+        "version": settings.APP_VERSION,
     }
 
 
 @app.get("/health", tags=["System"])
 async def health_check():
-    """
-    Health check endpoint.
-    Used by monitoring systems to verify application health.
-    """
     return {
         "status": "healthy",
     }
